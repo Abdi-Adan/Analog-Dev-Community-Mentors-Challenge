@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+    <!-- local css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>ADC | Mentors Challenge</title>
+</head>
+
+<body class="grey lighten-3">
+
+    <!-- navbar -->
+    <nav class="navbar mb-5 fixed-top navbar-expand-lg navbar-light indigo darken-4">
+        <div class="container">
+          <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
+            <strong class="text-white">ADC | Utility Meter</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+            <!-- Left -->
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link waves-effect blue-text font-weight-bold" href="#">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect blue-text font-weight-bold" href="#">About ADC</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect blue-text font-weight-bold" href="#">Contact ADC</a>
+              </li>
+            </ul>
+  
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons align-items-center">
+              <li class="nav-item">
+                <a href="#" class="blue-text font-weight-bold nav-link waves-effect">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="blue-text font-weight-bold nav-link waves-effect">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="blue-text font-weight-bold nav-link waves-effect">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="btn btn-md btn-outline-primary border border-light rounded waves-effect">Login</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="btn btn-md btn-outline-success border border-light rounded waves-effect">Register</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="btn btn-md btn-outline-danger border border-light rounded waves-effect">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- end of navbar -->
+
+
+    <!-- main content -->
+    <main class="mt-5 pt-5 mx-lg-5">
+        <div class="container">
+            <div class="row wow fadeIn">
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center p-3">
+                        Electricity
+                    </div>
+                    <div class="statcard mt-2 card text-center p-2">
+                        <p class="pt-2">Tokens Used in kWh</p>
+                        <canvas id="electricityChart1" class="chartElec"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center p-3">
+                        Water
+                    </div>
+                    <div class="statcard mt-2 card text-center p-2">
+                      <p class="pt-2">Amount of Water Used in Lts</p>
+                      <canvas id="waterChart"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center p-3">
+                        Gas
+                    </div>
+                    <div class="statcard mt-2 card text-center p-2">
+                      <p class="pt-2">Gas Percentages</p>
+                      <canvas id="gasChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <main class="pt-2 mx-lg-5">
+      <div class="container">
+        <div class="card mb-4 wow fadeIn">
+          <div class="p-3 d-sm-flex justify-content-between align-items-center">
+            <h5 class=" text-indigo">
+              Utility Consumption
+            </h5>
+            <div class="row align-items-center">
+              <div class="btn-group mx-2">
+                <select class="browser-default custom-select btn-outline-indigo dropdown-primary">
+                  <option selected>Utility</option>
+                  <option value="1">Electricity</option>
+                  <option value="2">Water</option>
+                  <option value="3">Gas</option>
+                </select>
+              </div>
+              <div class="btn-group mx-2">
+                <button type="button" class="btn btn-outline-indigo">Date</button>
+                <button type="button" class="btn btn-indigo dropdown-toggle px-3" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Electricity</a>
+                  <a class="dropdown-item" href="#">Water</a>
+                  <a class="dropdown-item" href="#">Gas</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+    <main class="pt-2 mx-lg-5">
+      <div class="container">
+        <h5 class="font-weight-bold mb-3">Electricity Consumption</h5>
+        <div class="row wow fadeIn">
+          <div class="col-lg-9 col-md-9 mb-4">
+            <div class="card">
+              <div class="card-body ">
+                <canvas id="lineChart"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card mb-4 pcard p-3">
+              <canvas id="electricityChart2"></canvas>
+            </div>
+            <div class="card mb-4">
+              <div class="card-body">
+                <canvas id="pieChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <main class="pt-2 mx-lg-5">
+      <div class="container">
+        <h5 class="font-weight-bold mb-3">Water Consumption</h5>
+        <div class="row wow fadeIn">
+          <div class="col-lg-9 col-md-9 mb-4">
+            <div class="card">
+              <div class="card-body ">
+                <canvas id="barChart"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card mb-4 pcard p-3">
+              <canvas id="pieChart"></canvas>
+            </div>
+            <div class="card mb-4">
+              <div class="card-body">
+                <canvas id="pieChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+    <main class="pt-2 mx-lg-5">
+      <div class="container">
+        <h5 class="font-weight-bold mb-3">Gas Consumption</h5>
+        <div class="row wow fadeIn">
+          <div class="col-lg-9 col-md-9 mb-4">
+            <div class="card">
+              <div class="card-body ">
+                <canvas id="scatterChart"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card mb-4 pcard p-3">
+              <canvas id="pieChart"></canvas>
+            </div>
+            <div class="card mb-4">
+              <div class="card-body">
+                <canvas id="pieChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- end of main content -->
+
+
+
+    
+
+
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+    <!-- local js -->
+    <script src="./js/main.js"></script>
+
+    
+</body>
+</html>

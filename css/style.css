@@ -1,0 +1,15 @@
+html {
+    font-family: sans-serif;
+}
+
+.statcard{
+    min-height: 250px;
+}
+
+.pcard{
+    min-height: 218px !important;
+}
+
+.chartElec{
+    height: 100% !important;
+}
