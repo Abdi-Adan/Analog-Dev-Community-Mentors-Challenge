@@ -73,9 +73,9 @@ var ctxL = document.getElementById("lineChart").getContext('2d');
 var myLineChart = new Chart(ctxL, {
 type: 'line',
 data: {
-labels: ["January", "February", "March", "April", "May", "June", "July"],
+labels: ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"],
 datasets: [{
-label: "My First dataset",
+label: "Last Week's Consumption (kWh)",
 data: [65, 59, 80, 81, 56, 55, 40],
 backgroundColor: [
 'rgba(105, 0, 132, .2)',
@@ -86,7 +86,7 @@ borderColor: [
 borderWidth: 2
 },
 {
-label: "My Second dataset",
+label: "This Week's consumption (kWh)",
 data: [28, 48, 40, 19, 86, 27, 90],
 backgroundColor: [
 'rgba(0, 137, 132, .2)',
@@ -127,9 +127,9 @@ var ctxB = document.getElementById("barChart").getContext('2d');
 var myBarChart = new Chart(ctxB, {
 type: 'bar',
 data: {
-labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+labels: ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"],
 datasets: [{
-label: '# of Votes',
+label: "This Week's water consumption (Lts)",
 data: [12, 19, 3, 5, 2, 3],
 backgroundColor: [
 'rgba(255, 99, 132, 0.2)',
